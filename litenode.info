@@ -1,0 +1,6 @@
+; $Id$
+name = "Litenode"
+description = "Provides a lighter alternative to Drupal's standard node_load() / node_view() stack."
+package = Views bonus pack
+dependencies[] = views
+core = 6.x
