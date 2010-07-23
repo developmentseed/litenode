@@ -123,7 +123,7 @@ class litenode_plugin_style_litenode extends views_plugin_style {
       }
 
       // OG
-      if (!empty($vars['options']['modules']['og'])) {
+      if (module_exists('og') && !empty($vars['options']['modules']['og'])) {
         // @TODO group type nodes
         // @TODO og_private
         // @TODO og_selective
@@ -146,12 +146,12 @@ class litenode_plugin_style_litenode extends views_plugin_style {
     }
 
     // Taxonomy module integration
-    if (!empty($vars['options']['modules']['taxonomy'])) {
+    if (module_exists('taxonomy') && !empty($vars['options']['modules']['taxonomy'])) {
       litenode_taxonomy_node_get_terms($nodes);
     }
 
     // Upload module integration
-    if (!empty($vars['options']['modules']['upload'])) {
+    if (module_exists('upload') && !empty($vars['options']['modules']['upload'])) {
       litenode_upload_load($nodes);
     }
 
